@@ -8,7 +8,6 @@ from fraudDetection import fraudDetection
 
 # loading model
 model = joblib.load('model_cycle2.joblib')
-print(model)
 
 # initialize API
 application = Flask(__name__)
