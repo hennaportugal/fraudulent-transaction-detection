@@ -10,9 +10,9 @@ from fraudDetection import fraudDetection
 model = joblib.load('model_cycle2.joblib')
 
 # initialize API
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route('/is-fraud', methods=['POST'])
+@app.route('/is-fraud', methods=['POST'])
 def churn_predict():
     test_json = request.get_json()
    
@@ -47,4 +47,4 @@ def churn_predict():
         return Response('{}', status=200, mimetype='application/json')
 
 if __name__ == '__main__':
-    application.run(debug=True) 
+    app.run(debug=True) 
